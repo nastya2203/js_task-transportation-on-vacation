@@ -21,13 +21,15 @@
  */
 function calculateRentalCost(days) {
   const price = 40;
-  if (days < 3) {
-    return (days * price);
-  } else if (days >= 3 && days < 7) {
-    return (days * price - 20);
-  } else {
-    return (days * price - 50);
+  const cashbackMoreThreeDays = 20;
+  const cashbackMoreSevenDays = 50;
+
+  if (days >= 3 && days < 7) {
+    return days * price - cashbackMoreThreeDays;
+  } else if (days > 7) {
+    return days * price - cashbackMoreSevenDays;
   }
+  return days * price;
 }
 
 module.exports = calculateRentalCost;
