@@ -26,9 +26,10 @@ function calculateRentalCost(days) {
 
   if (days >= 3 && days < 7) {
     return days * price - cashbackMoreThreeDays;
-  } else if (days > 7) {
+  } else if (days >= 7) {
     return days * price - cashbackMoreSevenDays;
   }
+
   return days * price;
 }
 
